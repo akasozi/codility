@@ -1,6 +1,8 @@
 package com.motionlab.datastructures.dynamicarray;
 
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -13,43 +15,50 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class DynamicArrayTest {
 
+    DynamicArray dynamicArray;
+
+    @BeforeEach
+    void setUp() {
+       dynamicArray = new DynamicArray();
+    }
+
     @Test
     @DisplayName("Test should pass when a valid index is passed")
     void itShouldGetValueByIndex() {
-        DynamicArray<Integer> test_arr = new DynamicArray<>();
-        test_arr.add(1);
-        test_arr.add(2);
-        test_arr.add(10);
 
-        Assertions.assertEquals(10, test_arr.get(2));
+        dynamicArray.add(1);
+        dynamicArray.add(2);
+        dynamicArray.add(10);
+        Assertions.assertEquals(10, dynamicArray.get(2));
     }
 
     @Test
     @DisplayName("Test should get dynamic array size")
     void itShouldGetDynamicArraySize() {
-        DynamicArray<Integer> test_arr = new DynamicArray<>();
-        test_arr.add(1);
-        test_arr.add(2);
-        test_arr.add(10);
-        Assertions.assertEquals(3, test_arr.size());
+
+        dynamicArray.add(1);
+        dynamicArray.add(2);
+        dynamicArray.add(10);
+        Assertions.assertEquals(3, dynamicArray.size());
     }
 
     @Test
     @DisplayName("Test should pass when valid index passed")
     void itShouldSetArrayValue() {
-        DynamicArray<Integer> test_arr = new DynamicArray<>();
-        test_arr.add(1);
-        test_arr.add(2);
-        test_arr.add(10);
+
+        dynamicArray.add(1);
+        dynamicArray.add(2);
+        dynamicArray.add(10);
         // Set
-        test_arr.set(2, 99);
-        Assertions.assertEquals(99, test_arr.get(2));
+        dynamicArray.set(2, 99);
+        Assertions.assertEquals(99, dynamicArray.get(2));
     }
 
     @Test
-    void itShouldClear() {
-        // Given
-        // When
-        // Then
+    @DisplayName("Test should pass when valid index passed")
+    void itShouldThrowIndexOutOfBoundsException() {
+        Throwable exception =
+                Assertions.assertThrows(IndexOutOfBoundsException.class, () -> dynamicArray.get(100));
+        Assertions.assertEquals("Illegal index: " + 100, exception.getMessage());
     }
 }
