@@ -7,7 +7,7 @@ import java.util.Iterator;
  *
  * @author Abu Bizibu, abukasozi@gmail.com
  * @created 29/10/2021
- * @project Datastructures practice
+ * @project Codility
  */
 @SuppressWarnings("unchecked")
 public class DynamicArray<T>  implements Iterable<T> {

@@ -9,9 +9,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 /**
- * @author Abu Bizibu
- * @created
- * @project
+ * A test class for the Generic Dynamic Array implementation
+ *
+ * @author Abu Bizibu, abukasozi@gmail.com
+ * @created 29/09/2021
+ * @project codility
  */
 class DynamicArrayTest {
 
