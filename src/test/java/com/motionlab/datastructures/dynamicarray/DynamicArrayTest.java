@@ -15,11 +15,11 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class DynamicArrayTest {
 
-    DynamicArray dynamicArray;
+    DynamicArray<Integer> dynamicArray;
 
     @BeforeEach
     void setUp() {
-       dynamicArray = new DynamicArray();
+       dynamicArray = new DynamicArray<Integer>();
     }
 
     @Test
@@ -52,6 +52,45 @@ class DynamicArrayTest {
         // Set
         dynamicArray.set(2, 99);
         Assertions.assertEquals(99, dynamicArray.get(2));
+        Assertions.assertNotNull(dynamicArray.get(2));
+    }
+
+    @Test
+    @DisplayName("Test should pass when valid index passed")
+    void itShouldClearArray() {
+        dynamicArray.add(1);
+        dynamicArray.add(2);
+        dynamicArray.add(10);
+        // Set
+        dynamicArray.set(2, 99);
+        dynamicArray.clear();
+        Assertions.assertEquals(0, dynamicArray.size());
+        Assertions.assertTrue(dynamicArray.isEmpty());
+    }
+
+    @Test
+    @DisplayName("Test should pass when valid index passed")
+    void itShouldRemoveElementAtSpecifiedIndex() {
+        dynamicArray.add(1);
+        dynamicArray.add(2);
+        dynamicArray.add(10);
+        // Set
+        Integer elem = dynamicArray.removeAt(1);
+        Assertions.assertEquals(2, dynamicArray.size());
+        Assertions.assertNotNull(elem);
+    }
+
+    @Test
+    @DisplayName("Test should pass when valid index passed")
+    void itShouldReturnIndexOf() {
+        dynamicArray.add(1);
+        dynamicArray.add(2);
+        dynamicArray.add(10);
+        // Set
+        // Integer elem = dynamicArray.indexOf(10)
+        Assertions.assertEquals(2, dynamicArray.indexOf(10));
+        Assertions.assertEquals(-1, dynamicArray.indexOf(11));
+        // Assertions.assertNotNull(elem);
     }
 
     @Test
@@ -61,4 +100,6 @@ class DynamicArrayTest {
                 Assertions.assertThrows(IndexOutOfBoundsException.class, () -> dynamicArray.get(100));
         Assertions.assertEquals("Illegal index: " + 100, exception.getMessage());
     }
+
+
 }
