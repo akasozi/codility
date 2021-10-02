@@ -103,5 +103,13 @@ class DynamicArrayTest {
         Assertions.assertEquals("Illegal index: " + 100, exception.getMessage());
     }
 
+    @Test
+    @DisplayName("Test should pass when invalid index specified")
+    void itShouldThrowIndexOutOfBoundsExceptionWhenRemoveWithZero() {
+        Throwable exception =
+        Assertions.assertThrows(IndexOutOfBoundsException.class, () -> dynamicArray.removeAt(-1));
+        Assertions.assertEquals("Illegal index: " + -1, exception.getMessage());
+    }
+
 
 }
