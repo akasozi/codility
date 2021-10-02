@@ -25,32 +25,30 @@ class DynamicArrayTest {
     }
 
     @Test
-    @DisplayName("Test should pass when a valid index is passed")
-    void itShouldGetValueByIndex() {
-
-        dynamicArray.add(1);
-        dynamicArray.add(2);
-        dynamicArray.add(10);
-        Assertions.assertEquals(10, dynamicArray.get(2));
+    @DisplayName("Should add element to the array")
+    void itShouldAddElementToDynamicArray() {
+        dynamicArray.add(999);
+        Assertions.assertFalse(dynamicArray.isEmpty());
+        Assertions.assertEquals(1, dynamicArray.size());
+        Assertions.assertTrue(dynamicArray.contains(999));
     }
 
     @Test
-    @DisplayName("Test should get dynamic array size")
+    @DisplayName("Should access an element using an index")
     void itShouldGetDynamicArraySize() {
-
-        dynamicArray.add(1);
-        dynamicArray.add(2);
-        dynamicArray.add(10);
-        Assertions.assertEquals(3, dynamicArray.size());
+        dynamicArray.add(34);
+        dynamicArray.add(33);
+        Assertions.assertEquals(2, dynamicArray.size());
+        Assertions.assertFalse(dynamicArray.isEmpty());
+        Assertions.assertEquals(33, dynamicArray.get(1));
     }
 
     @Test
-    @DisplayName("Test should pass when valid index passed")
-    void itShouldSetArrayValue() {
-
+    @DisplayName("Should set a new value at the specified index")
+    void itShouldSetNewDynamicArrayValue() {
+        dynamicArray.add(34);
+        dynamicArray.add(33);
         dynamicArray.add(1);
-        dynamicArray.add(2);
-        dynamicArray.add(10);
         // Set
         dynamicArray.set(2, 99);
         Assertions.assertEquals(99, dynamicArray.get(2));
@@ -58,28 +56,53 @@ class DynamicArrayTest {
     }
 
     @Test
-    @DisplayName("Test should pass when valid index passed")
-    void itShouldClearArray() {
-        dynamicArray.add(1);
-        dynamicArray.add(2);
-        dynamicArray.add(10);
-        // Set
-        dynamicArray.set(2, 99);
-        dynamicArray.clear();
-        Assertions.assertEquals(0, dynamicArray.size());
-        Assertions.assertTrue(dynamicArray.isEmpty());
+    @DisplayName("Should fail when illegal index is specified")
+    void itShouldFailWhenIllegalIndexSpecified() {
+        dynamicArray.add(34);
+        Throwable exception = Assertions.assertThrows(IndexOutOfBoundsException.class,
+                () -> dynamicArray.set(-1, 999));
+        Assertions.assertEquals("Illegal index: " + -1, exception.getMessage());
     }
 
     @Test
-    @DisplayName("Test should pass when valid index passed")
-    void itShouldRemoveElementAtSpecifiedIndex() {
+    @DisplayName("Should reset the array and update len to zero")
+    void itShouldClearArray() {
+        // Populate the array...
         dynamicArray.add(1);
         dynamicArray.add(2);
         dynamicArray.add(10);
+        // clear the contents of the array
+        dynamicArray.clear();
+        // Assertions...
+        Assertions.assertTrue(dynamicArray.isEmpty());
+        Assertions.assertEquals(0, dynamicArray.size());
+        Assertions.assertFalse(dynamicArray.contains(10));
+    }
+
+    @Test
+    @DisplayName("Should pass remove the value at the specified index")
+    void itShouldRemoveElementAtSpecifiedIndex() {
+        dynamicArray.add(34);
+        dynamicArray.add(33);
+        dynamicArray.add(1);
         // Set
         Integer elem = dynamicArray.removeAt(1);
         Assertions.assertEquals(2, dynamicArray.size());
         Assertions.assertNotNull(elem);
+        Assertions.assertFalse(dynamicArray.contains(33));
+    }
+
+    @Test
+    @DisplayName("Should pass remove the value at the specified index")
+    void itShouldRemoveElement() {
+        dynamicArray.add(34);
+        dynamicArray.add(33);
+        dynamicArray.add(1);
+        // Set
+        boolean is_success = dynamicArray.remove(1);
+        Assertions.assertEquals(2, dynamicArray.size());
+        Assertions.assertTrue(is_success);
+        Assertions.assertFalse(dynamicArray.contains(1));
     }
 
     @Test
@@ -104,12 +127,14 @@ class DynamicArrayTest {
     }
 
     @Test
-    @DisplayName("Test should pass when invalid index specified")
+    @DisplayName("Should fail when invalid index specified")
     void itShouldThrowIndexOutOfBoundsExceptionWhenRemoveWithZero() {
         Throwable exception =
         Assertions.assertThrows(IndexOutOfBoundsException.class, () -> dynamicArray.removeAt(-1));
         Assertions.assertEquals("Illegal index: " + -1, exception.getMessage());
     }
+
+
 
 
 }

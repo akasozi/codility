@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 /**
  * @author Abu Bizibu
- * @created
- * @project
+ * @created 02/10/2022
+ * @project Simple Unit Tests
  */
 class RemoveDuplicatesHashMapTest {
 
@@ -33,7 +34,6 @@ class RemoveDuplicatesHashMapTest {
 
         Throwable exception = Assertions.assertThrows(IllegalArgumentException.class,
                 () -> underTest.removeDuplicates(arr, -1));
-
         Assertions.assertEquals("Illegal argument: " + -1, exception.getMessage());
     }
 }
