@@ -122,6 +122,13 @@ This is a project I have created to assist me get up to speed with data structur
 https://www.journaldev.com/1827/java-design-patterns-example-tutorial
 
 ## CONCURRENCY
+1. Java Concurrency Essentials
+2. Concurrent Programming in Java Design Principles and Patterns
+
+
+## KUBERNETES, OBSERVABILITY 
+
+## DEVOPS & AUTOMATION
 
 
 
