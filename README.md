@@ -107,6 +107,16 @@ This is a project I have created to assist me get up to speed with data structur
 13. String - https://www.geeksforgeeks.org/string-data-structure/
 
 
+## ALGORITHMS
+1. Analysis of Algorithms - https://www.geeksforgeeks.org/fundamentals-of-algorithms/?ref=shm#AnalysisofAlgorithms
+2. Searching Algorithms - https://www.geeksforgeeks.org/searching-algorithms/
+3. Sorting Algoritmms - https://www.geeksforgeeks.org/sorting-algorithms/?ref=ghm
+4. Graph Algorithms - https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/?ref=ghm
+5. Divide & Conquer Algorithms - https://www.geeksforgeeks.org/divide-and-conquer/?ref=ghm
+6. Greedy Algorithms - https://www.geeksforgeeks.org/greedy-algorithms/?ref=ghm
+7. Dynamic Programming - https://www.geeksforgeeks.org/dynamic-programming/?ref=ghm
+8. Backtracking - https://www.geeksforgeeks.org/backtracking-algorithms/
+
 ## DESIGN PATTERNS
 
 https://www.journaldev.com/1827/java-design-patterns-example-tutorial
