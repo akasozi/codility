@@ -86,26 +86,28 @@ This is a project I have created to assist me get up to speed with data structur
    https://www.geeksforgeeks.org/treemap-in-java/?ref=lbp
 24. Comparator Interface with Java Examples:
   https://www.geeksforgeeks.org/comparator-interface-java/
+25. Iterator interface
+   https://www.cs.usfca.edu/~srollins/courses/cs112-f07/web/notes/iterators.html  
 
 
 
-DATA STRUCTURES
+## DATA STRUCTURES
+1. Arrays - https://www.geeksforgeeks.org/array-data-structure/
+2. LinkedList List - https://www.geeksforgeeks.org/data-structures/linked-list/
+3. Stack - https://www.geeksforgeeks.org/stack-data-structure/
+4. Queue - https://www.geeksforgeeks.org/queue-data-structure/?ref=ghm
+5. Binary Tree -  https://www.geeksforgeeks.org/binary-tree-data-structure/
+6. Binary Search Tree - https://www.geeksforgeeks.org/binary-search-tree-data-structure/?ref=ghm
+7. Heap - https://www.geeksforgeeks.org/heap-data-structure/
+8. Hashing - https://www.geeksforgeeks.org/hashing-data-structure/
+9. Graphs - https://www.geeksforgeeks.org/graph-data-structure-and-algorithms/
+10. Advanced Data Structures - https://www.geeksforgeeks.org/advanced-data-structures/#n-arytree
+11. Trie - https://www.geeksforgeeks.org/advantages-trie-data-structure/?ref=lbp
+12. Matrix - https://www.geeksforgeeks.org/matrix/
+13. String - https://www.geeksforgeeks.org/string-data-structure/
 
-Arrays
-LinkedList List
-Stack
-Queue
-Binary Tree
-Binary Search Tree
-Heap 
-Hashing 
-Graphs
-Advanced Data Structures
-Matrix
-String 
 
-
-DESIGN PATTERNS
+## DESIGN PATTERNS
 
 https://www.journaldev.com/1827/java-design-patterns-example-tutorial
 
