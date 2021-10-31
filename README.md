@@ -1,23 +1,19 @@
-# Datastructures and Algorithms
+# DATASTRUCTURES AND ALGORITHMS
 This is a project I have created to assist me get up to speed with data structures and Algorithms
 
 
 
 ## ARRAYS
 1. Introduction & examples:
- https://www.geeksforgeeks.org/arrays-in-java/
- 
+   https://www.geeksforgeeks.org/arrays-in-java/
 2. Multidimentional Arrays & Examples:
- https://www.geeksforgeeks.org/multidimensional-arrays-in-java/
-
+   https://www.geeksforgeeks.org/multidimensional-arrays-in-java/
 3. Jagged Array in Java & examples:
- https://www.geeksforgeeks.org/jagged-array-in-java/
-
+   https://www.geeksforgeeks.org/jagged-array-in-java/
 4. Common Array interview Questions:
- https://www.geeksforgeeks.org/top-50-array-coding-problems-for-interviews/
-
+   https://www.geeksforgeeks.org/top-50-array-coding-problems-for-interviews/
 5. Design a chess Game:
- https://www.geeksforgeeks.org/design-a-chess-game/?ref=leftbar-rightbar
+   https://www.geeksforgeeks.org/design-a-chess-game/?ref=leftbar-rightbar
  
 
 ## MATRIX
