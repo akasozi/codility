@@ -21,18 +21,19 @@ public class LinkedList {
         }
     }
 
-    private void insertFront(int val) {
+    public void insertFront(int val) {
         Node newNode = new Node(val, head);
         head = newNode;
         size++;
     }
 
     // O(n)
-    private void insertAt(int value, int position) {
+    public void insertAt(int value, int position) {
         Node newNode = new Node(value,null);
-        if (position == 0) {
+        if (position == 0 || head == null) {
             newNode.next = head;
             head = newNode;
+            size++;
             return;
         }
 
@@ -42,10 +43,15 @@ public class LinkedList {
         }
         newNode.next = temp.next;
         temp.next = newNode;
+        size++;
+    }
+
+    public int size() {
+        return size;
     }
 
 
-    private void reverse() {
+    public void reverse() {
         // Step 1 in all traversals
         Node cur = head;
         Node prev = null, next = null;  // for the head node prev = null
@@ -58,35 +64,19 @@ public class LinkedList {
         head = prev;
     }
 
-    private void printListReverse(Node cur) {
+    public void printListReverse(Node cur) {
         if (cur == null)
             return;
         printListReverse(cur.next);
         System.out.print(cur.value + " ");
     }
 
-    private void printList() {
+    public void printList() {
         Node temp = head;
         while(temp != null) {
             System.out.print(temp.value + " ");
             temp = temp.next;
         }
         System.out.println();
-    }
-
-
-    public static void main(String[] args) {
-        LinkedList linkedList = new LinkedList();
-        linkedList.insertFront(8);
-        linkedList.insertFront(6);
-        linkedList.insertFront(4);
-        linkedList.insertFront(2);
-        linkedList.printList();
-
-        linkedList.insertAt(10, 2); // 2,4,10,6,8
-        // linkedList.printListReverse(linkedList.head);
-        System.out.println();
-        linkedList.printList();
-
     }
 }
