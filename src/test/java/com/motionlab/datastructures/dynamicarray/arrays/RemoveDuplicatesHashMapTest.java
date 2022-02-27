@@ -15,11 +15,11 @@ import static org.junit.jupiter.api.Assertions.*;
  */
 class RemoveDuplicatesHashMapTest {
 
-    RemoveDuplicatesHashMap underTest;
+    com.motionlab.datastructures.dynamicarray.arrays.RemoveDuplicatesHashMap underTest;
 
     @BeforeEach
     void setUp() {
-        underTest = new RemoveDuplicatesHashMap();
+        underTest = new com.motionlab.datastructures.dynamicarray.arrays.RemoveDuplicatesHashMap();
     }
 
     @Test

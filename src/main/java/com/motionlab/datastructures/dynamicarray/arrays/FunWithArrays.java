@@ -34,4 +34,43 @@ public class FunWithArrays {
             }
         }
     }
+
+    // [1,2,3,0,0,0]
+    // 3
+    // [2,5,6]
+    // 3
+    // Expected output
+    //
+    public void merge(int[] nums1, int m, int[] nums2, int n) {
+
+        int i = 0, j = 0, k = 0;
+        int length = nums1.length;
+        while (i < m && j < n) {
+            if (nums1[i] < nums2[j]) {
+                int temp = nums1[i];
+                nums1[k] = temp;
+                i++;
+                k++;
+            } else {
+                int temp = nums2[j];
+                for (int v = length - 2; v >= k; v--)
+                    nums1[v+1] = nums1[v];
+                nums1[k] = temp;
+                j++;
+                k++;
+            }
+        }
+
+        while ( i < m) {
+            nums1[k] = nums1[i];
+            k++;
+            i++;
+        }
+
+        while (j < n) {
+            nums1[k] = nums2[j];
+            k++;
+            j++;
+        }
+    }
 }
